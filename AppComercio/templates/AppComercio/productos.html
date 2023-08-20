@@ -1,0 +1,45 @@
+{% extends 'AppComercio/mainTemplate.html' %} {% load static %} 
+{% block mainBlock %}
+
+<h1>Productos</h1>
+
+
+<section id=section-form>
+    <form id=cliente-form action="{% url 'productos' %}" method="POST"> {% csrf_token %}
+
+        {{formulario.as_p}}
+    
+    <input class="enviar" type="submit" value="Agregar Producto">
+
+</form>
+</section>
+
+
+
+{% if productos %}
+<table id=tabla>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Marca</th>
+      <th>Stock</th>
+      <th>Imagen</th>
+
+    </tr>
+{% for data in productos  %}
+    <tr>
+      <td>{{data.nombre}}</td>
+      <td>{{data.precio}}</td>
+      <td>{{data.marca}}</td>
+      <td>{{data.stock}}</td>
+      <td>{{data.imagen}}</td>
+
+    </tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock mainBlock %}
+
+
+
+

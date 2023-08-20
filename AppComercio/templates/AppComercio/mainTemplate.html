@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lora&family=Montserrat:wght@200&family=Roboto&display=swap" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'AppComercio/css/index.css' %}" rel="stylesheet" />
+    <title>index</title>
+  </head>
+  <body>
+    <div class="container">
+          <nav>
+            <div>
+              <a href="{% url 'inicio' %}">
+                <img src="{% static 'AppComercio/assets/saving_money_cash_icon_245957.png' %}" alt="logo-main" width="45" height="45">
+              </a>
+            
+            </div>
+      <div>
+        <a href="{% url 'cliente' %}">clientes</a>
+        <a href="{% url 'empleados' %}">empleados</a>
+        <a href="{% url 'productos' %}">productos</a>
+        <a href="{% url 'sucursales' %}">sucursales</a>
+        <a href="{% url 'busquedaSuc' %}">busqueda suc</a>
+      </div>
+    </nav>
+    <main>{% block mainBlock %} {% endblock mainBlock %}</main>
+    <footer></footer>
+    </div>
+
+  </body>
+</html>

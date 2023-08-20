@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+    text-align: center;
+
+    
+}
+
+body{
+    background-color: #ffffff;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #8382822d;
+}
+
+img{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    margin-right: 2rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(63, 61, 61, 0.548);
+}
+
+h1{
+    padding-top: 2rem;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(63, 61, 61, 0.548); ;
+}
+
+#tabla{
+    background-color: #b0f2c2;
+    margin: 2rem;
+    padding: 1rem;
+    border: solid 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(63, 61, 61, 0.548);
+}
+
+#tabla th,td{
+    padding: .5rem;
+    
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#cliente-form{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #d8f8e1;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(63, 61, 61, 0.548);
+}
+
+#cliente-form p{
+    margin-bottom: .3rem;
+}
+
+#cliente-form input{
+    width:fit-content;
+}
+
+.enviar{
+    font-size: 1.1rem;
+    margin-top: .5rem;
+    background-color: blue;
+    color: white;
+    border: 1px black;
+    border-radius: 5px;
+    padding: .5rem;
+    font-weight: bold;
+}
+
+#mensaje{
+    background-color: green;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#mensajeError{
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-top: 1rem;
+}

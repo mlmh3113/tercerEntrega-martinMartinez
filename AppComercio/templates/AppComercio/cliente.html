@@ -1,0 +1,55 @@
+{% extends 'AppComercio/mainTemplate.html' %}
+{% load static %}
+{% block mainBlock %}
+
+<h1>Ingresar nuevo Cliente</h1>
+
+
+<section id=section-form>
+    <form id=cliente-form action="{% url 'cliente' %}" method="POST"> {% csrf_token %}
+
+        {{formulario.as_p}}
+    
+    <input class="enviar" type="submit" value="Ingreasar Cliente">
+
+</form>
+</section>
+
+<div>
+    <h3>{{mensaje}}</h3>
+</div>
+
+{% if clientes %}
+
+<table id=tabla>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>DNI</th>
+      <th>Dirección</th>
+    </tr>
+{% for data in clientes  %}
+    <tr>
+      <td>{{data.nombre}}</td>
+      <td>{{data.apellido}}</td>
+      <td>{{data.dni}}</td>
+      <td>{{data.direccion}}</td>
+    </tr>
+
+{% endfor %}
+
+
+
+  </table>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+{% endblock mainBlock %}

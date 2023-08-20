@@ -1,0 +1,38 @@
+{% extends 'AppComercio/mainTemplate.html' %} {% load static %} 
+{% block mainBlock %}
+
+<h1>Sucursales</h1>
+
+<section id=section-form>
+    <form id=cliente-form action="{% url 'sucursales' %}" method="POST"> {% csrf_token %}
+
+        {{formulario.as_p}}
+    
+    <input class="enviar" type="submit" value="Agregar Sucursal">
+
+</form>
+</section>
+
+
+{% if mensaje %}
+    <div><p id=mensaje>{{mensaje}}</p></div>
+{% endif %}
+    
+
+
+
+{% if sucursales %}
+<table id=tabla>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+    </tr>
+{% for data in sucursales  %}
+    <tr>
+      <td>{{data.nombre}}</td>
+      <td>{{data.direccion}}</td>
+    </tr>
+{% endfor %}
+</table>
+{% endif %}
+{% endblock mainBlock %}

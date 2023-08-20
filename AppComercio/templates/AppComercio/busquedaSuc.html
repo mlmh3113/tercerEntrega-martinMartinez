@@ -1,0 +1,41 @@
+{% extends 'AppComercio/mainTemplate.html' %} {% load static %} 
+{% block mainBlock %}
+
+<h1>Busqueda de Sucursal</h1>
+
+
+<section id=section-form>
+    <form id=cliente-form action="{% url 'busquedaSuc' %}" method="POST"> {% csrf_token %}
+    <input type="text" name="sucursal" id="sucursal" placeholder="Busqueda por Nombre">
+    <input class="enviar" type="submit" value="Buscar">
+</form>
+</section>
+
+{% if data %}
+
+<table id=tabla>
+    <tr>
+      <th>Nombre</th>
+      <th>Direccion</th>
+
+    </tr>
+{% for data in data  %}
+    <tr>
+      <td>{{data.nombre}}</td>
+      <td>{{data.direccion}}</td>
+
+    </tr>
+
+{% endfor %}
+
+  </table>
+
+{% elif mensaje %}
+<div><p id=mensajeError>{{mensaje}}</p></div>
+ 
+
+{% endif %}
+
+
+
+{% endblock mainBlock %}
